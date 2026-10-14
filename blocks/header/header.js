@@ -327,10 +327,10 @@ function setAuthUserInfo(link, email) {
 }
 
 async function initAuth(nav, tools) {
-  const loginLabel = getDefaultAuthLabel('login');
-  const logoutLabel = getDefaultAuthLabel('logout');
-
   const loginCandidate = tools.querySelector('a[href*="login" i], a[data-auth-link]');
+  // an authored login link keeps its own label (e.g. "Client Login")
+  const loginLabel = loginCandidate?.textContent.trim() || getDefaultAuthLabel('login');
+  const logoutLabel = getDefaultAuthLabel('logout');
   const shouldCreateLink = !loginCandidate;
 
   const desktopLink = loginCandidate || document.createElement('a');
@@ -497,6 +497,23 @@ function initLanguage(tools, eventRoot) {
   decorateLanguageMenu(menu);
 }
 
+/**
+ * Logo links are authored as icon + text (e.g. ":sei-logo: SEI"): keep the text
+ * as the link's accessible name but hide it visually.
+ * @param {HTMLAnchorElement} link
+ */
+function labelLogoLink(link) {
+  if (!link?.querySelector('.icon')) return;
+  [...link.childNodes].forEach((node) => {
+    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+      const label = document.createElement('span');
+      label.className = 'nav-brand-label';
+      label.textContent = node.textContent.trim();
+      node.replaceWith(label);
+    }
+  });
+}
+
 function toggleMobile(nav, open, body) {
   const isOpen = open === undefined ? nav.getAttribute('aria-expanded') !== 'true' : open;
   body.style.overflowY = isOpen && !DESKTOP.matches ? 'hidden' : '';
@@ -551,6 +568,7 @@ export default async function decorate(block) {
 
   nav.querySelector('.nav-brand .button')?.classList.remove('button');
   nav.querySelector('.nav-brand .button-container')?.classList.remove('button-container');
+  labelLogoLink(nav.querySelector('.nav-brand a'));
 
   const sections = nav.querySelector('.nav-sections');
   sections?.querySelectorAll(NAV_ITEMS).forEach((li) => {

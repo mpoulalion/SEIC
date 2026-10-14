@@ -208,6 +208,7 @@
     --heading-font-size-xs: 18px;
     --content-padding-inline: var(--space-xl);
     --section-block-space: var(--space-3xl);
+    --nav-height: 80px;
   }
 }
 
@@ -290,6 +291,11 @@ body {
 
 body.appear {
   display: block;
+}
+
+/* SEI template pages are designed light-only; set early to avoid a dark flash */
+body.sei {
+  color-scheme: light;
 }
 
 header {
