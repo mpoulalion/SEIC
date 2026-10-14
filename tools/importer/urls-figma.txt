@@ -1,0 +1,3 @@
+http://localhost:3001/tools/importer/figma/home.html
+http://localhost:3001/tools/importer/figma/nav.html
+http://localhost:3001/tools/importer/figma/footer.html

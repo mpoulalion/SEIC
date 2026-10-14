@@ -1,0 +1,18 @@
+{
+  "templates": [
+    {
+      "name": "figma",
+      "description": "SEI pages and fragments transcribed from Figma file nIyZAKGgwm5b1GlfXMnmQk",
+      "source": "figma:nIyZAKGgwm5b1GlfXMnmQk",
+      "urls": [],
+      "blocks": [
+        { "name": "hero-home" },
+        { "name": "cards-highlights" },
+        { "name": "tabs-proof" },
+        { "name": "columns-reach" },
+        { "name": "cards-perspectives" },
+        { "name": "columns-newsletter" }
+      ]
+    }
+  ]
+}

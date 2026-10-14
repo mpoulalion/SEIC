@@ -1,0 +1,138 @@
+{
+  "pageName": "home",
+  "pagePath": "/home",
+  "fileKey": "nIyZAKGgwm5b1GlfXMnmQk",
+  "pageNodeId": "27:929",
+  "pageFrame": {
+    "name": "Home / FINAL",
+    "width": 1280,
+    "height": 4954,
+    "x": -2989,
+    "y": -8438
+  },
+  "outOfScope": [
+    {
+      "nodeId": "46:285",
+      "figmaName": "Navigation",
+      "reason": "Global header fragment (nav), not page content"
+    },
+    {
+      "nodeId": "46:347",
+      "figmaName": "Footer",
+      "reason": "Global footer fragment, not page content"
+    },
+    {
+      "nodeId": "100:725",
+      "figmaName": "Chatbot",
+      "reason": "Floating assistant widget, not authorable page content"
+    }
+  ],
+  "totalBlocks": 7,
+  "blocks": [
+    {
+      "order": 1,
+      "nodeId": "27:975",
+      "figmaName": "Hero",
+      "suggestedBlockType": "hero",
+      "suggestedVariantName": "hero-home",
+      "width": 1280,
+      "height": 800,
+      "y": 80,
+      "status": "completed",
+      "hasImages": false,
+      "imageValidation": "n/a",
+      "validation": "passed"
+    },
+    {
+      "order": 2,
+      "nodeId": "2509:2461",
+      "figmaName": "Highlights_2",
+      "suggestedBlockType": "cards",
+      "suggestedVariantName": "cards-highlights",
+      "rowCount": 3,
+      "width": 1280,
+      "height": 593,
+      "y": 880,
+      "status": "completed",
+      "hasImages": true,
+      "imageValidation": "passed (placeholder crops from screenshot)",
+      "validation": "passed"
+    },
+    {
+      "order": 3,
+      "nodeIds": [
+        "27:1000",
+        "27:1001",
+        "27:1003"
+      ],
+      "figmaName": "Connective tissue (heading, intro, animation)",
+      "suggestedBlockType": "default-content",
+      "suggestedVariantName": "default-content",
+      "width": 1280,
+      "height": 795,
+      "y": 1465,
+      "status": "completed",
+      "hasImages": true,
+      "imageValidation": "passed (placeholder crops from screenshot)",
+      "validation": "passed"
+    },
+    {
+      "order": 4,
+      "nodeId": "2738:3785",
+      "figmaName": "hp-proof",
+      "suggestedBlockType": "tabs",
+      "suggestedVariantName": "tabs-proof",
+      "width": 1280,
+      "height": 461,
+      "y": 2268,
+      "status": "completed",
+      "hasImages": true,
+      "imageValidation": "passed (placeholder crops from screenshot)",
+      "validation": "passed"
+    },
+    {
+      "order": 5,
+      "nodeId": "27:1028",
+      "figmaName": "OurReach",
+      "suggestedBlockType": "columns",
+      "suggestedVariantName": "columns-reach",
+      "width": 1280,
+      "height": 743,
+      "y": 2728,
+      "status": "completed",
+      "hasImages": true,
+      "imageValidation": "passed (placeholder crops from screenshot)",
+      "validation": "passed"
+    },
+    {
+      "order": 6,
+      "nodeId": "27:1213",
+      "figmaName": "Perspectives",
+      "suggestedBlockType": "cards",
+      "suggestedVariantName": "cards-perspectives",
+      "rowCount": 4,
+      "width": 1280,
+      "height": 594,
+      "y": 3470,
+      "status": "completed",
+      "hasImages": true,
+      "imageValidation": "passed (placeholder crops from screenshot)",
+      "validation": "passed"
+    },
+    {
+      "order": 7,
+      "nodeId": "46:324",
+      "figmaName": "CTA / StayConnected",
+      "suggestedBlockType": "columns",
+      "suggestedVariantName": "columns-newsletter",
+      "width": 1280,
+      "height": 456,
+      "y": 4064,
+      "status": "completed",
+      "hasImages": false,
+      "imageValidation": "n/a",
+      "validation": "passed"
+    }
+  ],
+  "note": "Built from the Figma screenshot: Figma API rate limit blocked design-context extraction (2026-10-13). Images are placeholder crops."
+}
