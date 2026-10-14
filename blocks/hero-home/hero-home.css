@@ -1,0 +1,208 @@
+main > .section.hero-home-container {
+  padding-block: 0;
+}
+
+main > .section.hero-home-container > .hero-home-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.hero-home {
+  --hero-home-ink: #131517;
+  --hero-home-cyan: #00c0f3;
+  --hero-home-lime: #a6cf39;
+  --hero-home-green: #6dca7d;
+  --hero-home-line: 3px;
+  --hero-home-line-gradient: linear-gradient(90deg, var(--hero-home-cyan), #66c982 60%, var(--hero-home-lime));
+  --hero-home-top-space: 80px;
+  --hero-home-bottom-space: 72px;
+  --hero-home-band-pad: 20px;
+  --hero-home-inset: var(--space-l);
+  --hero-home-font-size: 34px;
+  --hero-home-tagline-size: 18px;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--hero-home-top-space) var(--hero-home-bottom-space);
+  background-color: #fff;
+  color: var(--hero-home-ink);
+  color-scheme: light;
+}
+
+/* bottom gradient bar */
+.hero-home::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 0 31.25%;
+  height: var(--hero-home-bottom-space);
+  background: linear-gradient(90deg, #12c2e0, var(--hero-home-green) 100%);
+}
+
+.hero-home .hero-home-content > * {
+  margin: 0;
+}
+
+.hero-home h1 {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-home-line);
+  font-family: var(--body-font-family);
+  font-size: var(--hero-home-font-size);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+/* top-right gradient panel behind the headline bands */
+.hero-home h1::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: calc(var(--hero-home-top-space) * -1) 0 calc(var(--hero-home-line) * -2) 50%;
+  background: linear-gradient(to bottom left, var(--hero-home-lime), var(--hero-home-green));
+}
+
+.hero-home .hero-home-band {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--hero-home-band-pad) var(--hero-home-inset);
+  background: var(--hero-home-line-gradient) top / 100% var(--hero-home-line) no-repeat, #fff;
+}
+
+.hero-home .hero-home-band-accent {
+  width: 88%;
+}
+
+/* deeper cyan/green than the decorative bars so the large text keeps 3:1 contrast */
+.hero-home .hero-home-band-accent .hero-home-band-text {
+  background: linear-gradient(90deg, #008fbd, #3d9b62);
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-home h1 + p {
+  padding: calc(var(--hero-home-band-pad) * 1.5) var(--hero-home-inset);
+  background:
+    var(--hero-home-line-gradient) top / 100% var(--hero-home-line) no-repeat,
+    var(--hero-home-line-gradient) bottom / 100% var(--hero-home-line) no-repeat,
+    #fff;
+  font-size: var(--hero-home-tagline-size);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@media (width >= 600px) {
+  .hero-home {
+    --hero-home-top-space: 112px;
+    --hero-home-bottom-space: 112px;
+    --hero-home-band-pad: 28px;
+    --hero-home-inset: 32px;
+    --hero-home-font-size: 48px;
+    --hero-home-tagline-size: 22px;
+  }
+
+  .hero-home .hero-home-band {
+    width: 92%;
+  }
+
+  .hero-home .hero-home-band-accent {
+    width: 70%;
+  }
+}
+
+@media (width >= 900px) {
+  .hero-home {
+    --hero-home-top-space: 157px;
+    --hero-home-bottom-space: 160px;
+    --hero-home-band-pad: 36px;
+    --hero-home-inset: 48px;
+    --hero-home-font-size: 64px;
+    --hero-home-tagline-size: 28px;
+  }
+
+  .hero-home .hero-home-band {
+    width: 92%;
+  }
+
+  .hero-home .hero-home-band-accent {
+    width: 64.6%;
+  }
+
+  .hero-home h1 + p {
+    padding-block: 58px;
+  }
+}
+
+/* sizes are calibrated to the Figma render: CircularXX 80px/32px renders as wide as
+   the site font (Montserrat) at 72px/28px */
+@media (width >= 1200px) {
+  .hero-home {
+    --hero-home-font-size: 72px;
+  }
+}
+
+/* "gradient" option: one diagonal brand gradient behind the text, no bands */
+.hero-home.gradient {
+  --hero-home-gradient-top: 72px;
+  --hero-home-gradient-bottom: 120px;
+  --hero-home-line-height: 1.3;
+  --hero-home-line-gap: 8px;
+  --hero-home-tagline-gap: 32px;
+
+  padding-block: var(--hero-home-gradient-top) var(--hero-home-gradient-bottom);
+  background: linear-gradient(216deg, var(--hero-home-lime) 0%, var(--hero-home-cyan) 100%);
+}
+
+.hero-home.gradient::after,
+.hero-home.gradient h1::before {
+  content: none;
+}
+
+.hero-home.gradient h1 {
+  gap: var(--hero-home-line-gap);
+  line-height: var(--hero-home-line-height);
+}
+
+.hero-home.gradient .hero-home-band,
+.hero-home.gradient .hero-home-band-accent {
+  width: auto;
+  padding-block: 0;
+  background: none;
+}
+
+.hero-home.gradient .hero-home-band-accent .hero-home-band-text {
+  background: linear-gradient(90deg, var(--hero-home-cyan), var(--hero-home-lime));
+  background-clip: text;
+}
+
+.hero-home.gradient h1 + p {
+  margin-top: var(--hero-home-tagline-gap);
+  padding-block: 0;
+  background: none;
+  line-height: 1.05;
+}
+
+@media (width >= 900px) {
+  .hero-home.gradient {
+    --hero-home-gradient-top: 142px;
+    --hero-home-gradient-bottom: 178px;
+    --hero-home-line-height: 112px;
+    --hero-home-line-gap: 15px;
+    --hero-home-tagline-gap: 54px;
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-home.gradient {
+    --hero-home-gradient-top: 178px;
+    --hero-home-gradient-bottom: 223px;
+    --hero-home-line-height: 140px;
+    --hero-home-line-gap: 19px;
+    --hero-home-tagline-gap: 68px;
+  }
+}

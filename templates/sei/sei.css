@@ -1,0 +1,71 @@
+/* SEI page template: sans-serif brand typography on a plain white page */
+body.sei {
+  --sei-ink: #131517;
+  --sei-lime-text: #668c18; /* brand lime #a6cf39 darkened to 3.9:1 on white for large text */
+
+  background: #fff;
+  color: var(--sei-ink);
+}
+
+body.sei main :is(h1, h2, h3, h4) {
+  font-family: var(--body-font-family);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+body.sei main h2 {
+  font-size: 28px;
+}
+
+/* the site's decorative underline under h2s isn't part of the SEI design */
+body.sei :is(main, article.article-body) > .section h2::after {
+  display: none;
+}
+
+/* italic words in headings render as the lime accent */
+body.sei main h2 em {
+  color: var(--sei-lime-text);
+  font-style: normal;
+}
+
+body.sei main > .section > div {
+  max-width: 1280px;
+  padding-inline: var(--space-l);
+}
+
+body.sei main .default-content-wrapper p {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+body.sei main .default-content-wrapper h2 + p {
+  max-width: 900px;
+  margin-top: 0;
+}
+
+/* standalone images in default content are centered */
+body.sei main .default-content-wrapper p:has(> picture:only-child) {
+  margin-block: var(--space-2xl);
+  text-align: center;
+}
+
+body.sei main .default-content-wrapper p:has(> picture:only-child) img {
+  width: min(100%, 360px);
+  height: auto;
+  aspect-ratio: auto;
+}
+
+@media (width >= 900px) {
+  body.sei main h2 {
+    font-size: 36px;
+  }
+
+  body.sei main .default-content-wrapper p {
+    font-size: 18px;
+  }
+
+  body.sei main .default-content-wrapper p:has(> picture:only-child) {
+    margin-block: 120px 110px;
+  }
+}

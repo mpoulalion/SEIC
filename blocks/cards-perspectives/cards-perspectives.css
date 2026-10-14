@@ -1,0 +1,158 @@
+/* heading and "view all" link share one row */
+main > .section.cards-perspectives-container .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s) var(--space-l);
+  margin-bottom: var(--space-l);
+}
+
+.cards-perspectives {
+  --cards-perspectives-radius: 12px;
+}
+
+.cards-perspectives > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-l);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-perspectives .cards-perspectives-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--cards-perspectives-radius);
+
+  /* deep cyan so the white body text reaches 5:1 */
+  background: #0077a8;
+}
+
+.cards-perspectives .cards-perspectives-media {
+  position: relative;
+  aspect-ratio: 284 / 293;
+  background: #e6e6e6;
+}
+
+.cards-perspectives .cards-perspectives-media picture,
+.cards-perspectives .cards-perspectives-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards-perspectives .cards-perspectives-person {
+  position: absolute;
+  inset: 22px auto auto 22px;
+  max-width: 40%;
+  color: var(--cards-perspectives-ink);
+}
+
+.cards-perspectives .cards-perspectives-person p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* name: first and last name on separate lines */
+.cards-perspectives .cards-perspectives-name {
+  width: min-content;
+  margin-bottom: var(--space-s);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.cards-perspectives .cards-perspectives-body {
+  flex: 1;
+  padding: var(--space-l) 18px;
+  color: #fff;
+}
+
+.cards-perspectives .cards-perspectives-body > * {
+  margin: 0;
+  color: inherit;
+}
+
+.cards-perspectives .cards-perspectives-body h3 {
+  margin-bottom: var(--space-s);
+  font-family: var(--body-font-family);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.cards-perspectives .cards-perspectives-body p {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+@media (width >= 600px) {
+  .cards-perspectives > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-perspectives > ul {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 33px;
+  }
+
+  .cards-perspectives .cards-perspectives-body h3 {
+    font-size: 20px;
+  }
+
+  .cards-perspectives .cards-perspectives-body p {
+    font-size: 14px;
+  }
+}
+
+/* section-level styles (background, layout, default content) */
+main > .section.cards-perspectives-container {
+  --cards-perspectives-ink: #131517;
+  --cards-perspectives-cyan: #00c0f3;
+
+  padding-block: var(--space-xl) var(--space-2xl);
+  color-scheme: light;
+}
+
+main > .section.cards-perspectives-container > div {
+  max-width: 1280px;
+  padding-inline: var(--space-l);
+}
+
+main > .section.cards-perspectives-container .default-content-wrapper > * {
+  margin: 0;
+  color: var(--cards-perspectives-ink);
+}
+
+main > .section.cards-perspectives-container .default-content-wrapper a:any-link {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--cards-perspectives-ink);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-decoration: none;
+  text-transform: none;
+  box-shadow: none;
+}
+
+main > .section.cards-perspectives-container .default-content-wrapper a:any-link::after {
+  content: '→' / '';
+  position: static;
+  margin-left: var(--space-m);
+  background: none;
+  color: var(--cards-perspectives-cyan);
+  transform: none;
+}
+
+main > .section.cards-perspectives-container .default-content-wrapper a:any-link:hover {
+  text-decoration: underline;
+}
